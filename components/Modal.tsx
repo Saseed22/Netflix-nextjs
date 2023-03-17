@@ -1,7 +1,7 @@
 
   import{AiOutlineCheck,AiOutlinePlus,AiOutlineClose} from 'react-icons/ai'
   import{BsHandThumbsUp,BsFillVolumeMuteFill,BsFillVolumeUpFill} from 'react-icons/bs'
-  import MuiModal from '@mui/material/Modal'
+  // import MuiModal from '@mui/material/Modal'
   import {
     collection,
     deleteDoc,
@@ -11,9 +11,9 @@
     setDoc,
   } from 'firebase/firestore'
   import { useEffect, useState } from 'react'
-  import toast, { Toaster } from 'react-hot-toast'
+  // import toast, { Toaster } from 'react-hot-toast'
   import { FaPlay } from 'react-icons/fa'
-  import ReactPlayer from 'react-player/lazy'
+  // import ReactPlayer from 'react-player/lazy'
   import { useRecoilState } from 'recoil'
   import { modalState, movieState } from '../atoms/modalAtom'
   import { db } from '../firebase'

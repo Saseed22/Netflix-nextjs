@@ -1,4 +1,4 @@
-import { CheckIcon } from '@heroicons/react/outline'
+import{AiOutlineCheck} from 'react-icons/ai'
 import { Product } from '@stripe/firestore-stripe-payments'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -55,15 +55,15 @@ function Plans({ products }: Props) {
         </h1>
         <ul>
           <li className="flex items-center gap-x-2 text-lg">
-            <CheckIcon className="h-7 w-7 text-[#E50914]" /> Watch all you want.
+            <AiOutlineCheck className="h-7 w-7 text-[#E50914]" /> Watch all you want.
             Ad-free.
           </li>
           <li className="flex items-center gap-x-2 text-lg">
-            <CheckIcon className="h-7 w-7 text-[#E50914]" /> Recommendations
+            <AiOutlineCheck className="h-7 w-7 text-[#E50914]" /> Recommendations
             just for you.
           </li>
           <li className="flex items-center gap-x-2 text-lg">
-            <CheckIcon className="h-7 w-7 text-[#E50914]" /> Change or cancel
+            <AiOutlineCheck className="h-7 w-7 text-[#E50914]" /> Change or cancel
             your plan anytime.
           </li>
         </ul>
