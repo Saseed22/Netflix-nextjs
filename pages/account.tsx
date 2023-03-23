@@ -1,11 +1,11 @@
 import { getProducts, Product } from '@stripe/firestore-stripe-payments'
-import { GetStaticProps } from 'next'
+
 import Head from 'next/head'
 import Link from 'next/link'
 import Membership from '../components/Membership'
 import useAuth from '../hooks/useAuth'
 import useSubscription from '../hooks/useSubscription'
-import payments from '../lib/stripe'
+
 
 interface Props {
   products: Product[]
@@ -47,7 +47,8 @@ function Account({ products }: Props) {
           <div className="-ml-0.5 flex items-center gap-x-1.5">
             <img src="https://rb.gy/4vfk4r" alt="" className="h-7 w-7" />
             <p className="text-xs font-semibold text-[#555]">
-              Member since {subscription?.created}
+                          Member since
+                          {subscription?.created}
             </p>
           </div>
         </div>
@@ -56,14 +57,10 @@ function Account({ products }: Props) {
 
         <div className="mt-6 grid grid-cols-1 gap-x-4 border px-4 py-4 md:grid-cols-4 md:border-x-0 md:border-t md:border-b-0 md:px-0 md:pb-0">
           <h4 className="text-lg text-[gray]">Plan Details</h4>
-          {/* Find the current plan */}
-          <div className="col-span-2 font-medium">
-            {
-              products.filter(
-                (product) => product.id === subscription?.product
-              )[0]?.name
-            }
-          </div>
+         
+                  
+
+
           <p className="cursor-pointer text-blue-500 hover:underline md:text-right">
             Change plan
           </p>
@@ -73,9 +70,9 @@ function Account({ products }: Props) {
           <h4 className="text-lg text-[gray]">Settings</h4>
           <p
             className="col-span-3 cursor-pointer text-blue-500 hover:underline"
-            onClick={logout}
+            
           >
-            Sign out of all devices
+            <Link href="/">Sign out of all devices</Link>
           </p>
         </div>
       </main>
@@ -84,18 +81,3 @@ function Account({ products }: Props) {
 }
 
 export default Account
-
-export const getStaticProps: GetStaticProps = async () => {
-  const products = await getProducts(payments, {
-    includePrices: true,
-    activeOnly: true,
-  })
-    .then((res) => res)
-    .catch((error) => console.log(error.message))
-
-  return {
-    props: {
-      products,
-    },
-  }
-}

@@ -42,7 +42,7 @@ const Header = () => {
         <BsSearch />
         <p className='hidden lg:inline'>Kids</p>
         <BsBell />
-        <Link href='/account'>
+        <Link href='/login'>
         <img
             src="https://rb.gy/g1pwyx"
             alt=""
